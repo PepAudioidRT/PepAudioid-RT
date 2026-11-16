@@ -13,6 +13,62 @@
 <main>
 <section class="hero" id="home"><div class="wrap hero-inner"><div><div class="eyebrow">A community experiment in real-time audio</div><h1>PepAudioid <span>RT</span></h1><p class="lead">A lightweight Linux environment built to explore low-latency, reliable music playback — from MPD through ALSA to your USB DAC.</p><div class="buttons"><a class="button primary" href="https://github.com/PepAudioidRT/PepAudioid-RT/releases">↓ Download / Releases</a><a class="button" href="https://github.com/PepAudioidRT/PepAudioid-RT">View on GitHub ↗</a></div><p class="micro">Free to explore · Experimental project · Live USB development</p></div><div class="amplifier" role="img" aria-label="Stylized warm-glowing vacuum tube amplifier"><div class="tube t1"></div><div class="tube t2"></div><div class="tube t3"></div><div class="amp-body"><div class="dial"></div></div></div></div><div class="wave"></div></section>
 <section class="section" id="features"><div class="wrap"><div class="eyebrow">Built for focused listening</div><h2>Minimal system. Measurable behavior.</h2><p class="intro">PepAudioid RT explores a streamlined Linux audio chain, with real-time scheduling and measurements that can be repeated on different hardware.</p><div class="features"><article class="feature"><div class="symbol">ϟ</div><h3>PREEMPT_RT kernel</h3><p>Custom 7.3.1-necroaudio3-rt1 kernel used in our recorded tests.</p></article><article class="feature"><div class="symbol">♫</div><h3>MPD playback</h3><p>A dedicated music daemon with FLAC playback and controlled audio settings.</p></article><article class="feature"><div class="symbol">⇢</div><h3>ALSA → USB DAC</h3><p>A direct, inspectable output chain without an unnecessary desktop audio stack.</p></article><article class="feature"><div class="symbol">▣</div><h3>Live USB testing</h3><p>Try the environment on compatible hardware without replacing your installed OS.</p></article></div></div></section>
+
+<section class="section" id="old-hardware">
+  <div class="wrap">
+    <div class="eyebrow">Give your hardware a second life</div>
+    <h2>Old Hardware. <span class="accent">Real-Time Audio.</span></h2>
+
+    <p class="intro">
+      Your old PC might still have a lot of music left in it.
+      PepAudioid RT explores how older desktops and laptops
+      can become dedicated digital audio players, using a
+      lightweight Linux environment, MPD, ALSA and a USB DAC.
+    </p>
+
+    <div class="two">
+      <article class="info">
+        <div class="symbol">▣</div>
+        <h3>Intel Core i3-M350 · 2010</h3>
+        <p>
+          An older laptop successfully tested with the
+          PepAudioid RT Live USB, PREEMPT_RT kernel and
+          FLAC playback through an external USB DAC.
+        </p>
+        <p style="margin-top:14px">
+          <span class="accent">65 µs</span> maximum observed
+          series-wide worst-case scheduling latency in
+          the recorded Live test.
+        </p>
+      </article>
+
+      <article class="info">
+        <div class="symbol">▣</div>
+        <h3>HP 280 G2 · Intel Core i3-6100</h3>
+        <p>
+          Our development and audio-testing platform.
+          A modest desktop running a custom PREEMPT_RT
+          kernel, MPD and ALSA with a Musical Fidelity
+          V90-DAC.
+        </p>
+        <p style="margin-top:14px">
+          <span class="accent">31 µs</span> highest observed
+          series-wide worst-case scheduling latency
+          across three recorded RT test series.
+        </p>
+      </article>
+    </div>
+
+    <p class="note">
+      No expensive modern CPU is required for basic
+      lossless audio playback. Actual compatibility and
+      real-time performance depend on the hardware.
+      Low scheduling latency does not, by itself,
+      demonstrate superior audible sound quality.
+    </p>
+  </div>
+</section>
+
 <section class="section muted-bg" id="benchmarks"><div class="wrap"><div class="eyebrow">Measured, not marketed</div><h2>Real-world latency tests</h2><p class="intro">Selected observations from our own test sessions. These are scheduling-latency results, not measurements of sound quality or proof of audible superiority.</p><div class="stats"><div class="stat"><strong>16 µs</strong><span>HP 280 G2 · lowest series-wide worst case in one 10 × 2-minute cyclictest series (RT kernel)</span></div><div class="stat"><strong>31 µs</strong><span>HP 280 G2 · highest observed worst case across three recorded RT test series</span></div><div class="stat"><strong>65 µs</strong><span>Intel i3-M350 · highest observed worst case in a 10 × 2-minute Live USB test series</span></div></div><p class="note">Hardware: HP 280 G2 / i3-6100 and Intel i3-M350. Tests used kernel 7.3.1-necroaudio3-rt1 and cyclictest; configurations and load conditions varied by series. The HP figures are from the 5 Nov 2026 test series; the i3-M350 figure is from 12 Nov 2026. An XRUN monitor reported zero observed episodes in a separate session, but its audio-XRUN sensitivity was not validated by an induced event. Full protocols and reproducibility materials are planned.</p></div></section>
 <section class="section" id="how-to-use"><div class="wrap"><div class="eyebrow">Get started</div><h2>How to try PepAudioid RT</h2><div class="two"><article class="info"><h3>Live USB workflow</h3><ol class="steps"><li>Check the <a href="https://github.com/PepAudioidRT/PepAudioid-RT/releases" style="color:var(--gold);text-decoration:underline">Releases page</a> for an available ISO.</li><li>Verify the published SHA-256 checksum before use.</li><li>Write the ISO to a spare USB drive using a suitable imaging tool.</li><li>Boot compatible hardware and follow the release-specific instructions.</li></ol><p>Writing an image erases the selected USB drive. Back up anything important first.</p></article><article class="info"><h3>Project status</h3><p>PepAudioid RT is an experimental, evolving project. The next ISO version is still under development. Download availability, hardware compatibility, and exact setup steps will be documented per release rather than assumed.</p><p style="margin-top:18px">Want to help? Share your hardware, DAC model, scheduling-latency results and playback observations through GitHub Issues.</p><p style="margin-top:18px"><a class="button" href="https://github.com/PepAudioidRT/PepAudioid-RT/issues">Open GitHub Issues ↗</a></p></article></div></div></section>
 <section class="cta" id="download"><div class="wrap"><div class="eyebrow">Explore. Measure. Share.</div><h2>Try PepAudioid <span class="accent">RT</span></h2><p>Join a small open experiment in Linux real-time audio.</p><div class="buttons"><a class="button primary" href="https://github.com/PepAudioidRT/PepAudioid-RT/releases">Browse ISO releases ↗</a><a class="button" href="https://github.com/PepAudioidRT/PepAudioid-RT">Project repository ↗</a></div></div></section>
